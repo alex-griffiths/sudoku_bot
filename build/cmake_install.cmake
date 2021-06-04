@@ -131,9 +131,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/alex/sudoku_bot_ws/build/gtest/cmake_install.cmake")
-  include("/home/alex/sudoku_bot_ws/build/interface/cmake_install.cmake")
   include("/home/alex/sudoku_bot_ws/build/move_arm_joints/cmake_install.cmake")
   include("/home/alex/sudoku_bot_ws/build/mover_client/cmake_install.cmake")
+  include("/home/alex/sudoku_bot_ws/build/interface/cmake_install.cmake")
+  include("/home/alex/sudoku_bot_ws/build/tester/cmake_install.cmake")
 
 endif()
 

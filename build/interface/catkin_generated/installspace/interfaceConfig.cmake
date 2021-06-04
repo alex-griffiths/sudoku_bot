@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/alex/sudoku_bot_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/alex/sudoku_bot_ws/install/lib;/home/alex/sudoku_bot_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(interface_EXPORTED_TARGETS "")
+set(interface_EXPORTED_TARGETS "interface_generate_messages_cpp;interface_generate_messages_eus;interface_generate_messages_lisp;interface_generate_messages_nodejs;interface_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${interface_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND interface_EXPORTED_TARGETS ${${interface_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "interface-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${interface_DIR}/${extra})

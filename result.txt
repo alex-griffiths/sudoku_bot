@@ -1,0 +1,11 @@
+clingo version 4.5.4
+Reading from my_sudoku_facts.lp ...
+Solving...
+Answer: 1
+gridNum(1,1,8) gridNum(1,4,5) gridNum(1,5,7) gridNum(1,8,4) gridNum(1,9,6) gridNum(2,5,4) gridNum(3,4,8) gridNum(3,5,3) gridNum(4,1,7) gridNum(4,9,9) gridNum(5,1,9) gridNum(5,2,3) gridNum(5,3,1) gridNum(6,1,2) gridNum(6,3,4) gridNum(6,6,8) gridNum(7,7,9) gridNum(7,9,2) gridNum(8,1,5) gridNum(9,4,4) gridNum(9,5,5) gridNum(2,1,1) gridNum(9,1,3) gridNum(3,1,4) gridNum(7,1,6) gridNum(8,2,1) gridNum(3,2,2) gridNum(7,2,4) gridNum(6,2,5) gridNum(4,2,6) gridNum(2,2,7) gridNum(9,2,8) gridNum(1,2,9) gridNum(8,3,2) gridNum(1,3,3) gridNum(3,3,5) gridNum(2,3,6) gridNum(7,3,7) gridNum(4,3,8) gridNum(9,3,9) gridNum(7,4,1) gridNum(2,4,2) gridNum(4,4,3) gridNum(8,4,6) gridNum(5,4,7) gridNum(6,4,9) gridNum(6,5,1) gridNum(4,5,2) gridNum(5,5,6) gridNum(7,5,8) gridNum(8,5,9) gridNum(1,6,1) gridNum(9,6,2) gridNum(7,6,3) gridNum(5,6,4) gridNum(4,6,5) gridNum(3,6,6) gridNum(8,6,7) gridNum(2,6,9) gridNum(9,7,1) gridNum(1,7,2) gridNum(8,7,3) gridNum(4,7,4) gridNum(2,7,5) gridNum(6,7,6) gridNum(3,7,7) gridNum(5,7,8) gridNum(4,8,1) gridNum(5,8,2) gridNum(2,8,3) gridNum(7,8,5) gridNum(9,8,6) gridNum(6,8,7) gridNum(8,8,8) gridNum(3,8,9) gridNum(3,9,1) gridNum(6,9,3) gridNum(8,9,4) gridNum(5,9,5) gridNum(9,9,7) gridNum(2,9,8)
+SATISFIABLE
+
+Models       : 1+    
+Calls        : 1
+Time         : 0.034s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.010s

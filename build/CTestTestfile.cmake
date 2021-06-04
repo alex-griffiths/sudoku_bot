@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("interface")
 subdirs("move_arm_joints")
 subdirs("mover_client")
+subdirs("interface")
+subdirs("tester")

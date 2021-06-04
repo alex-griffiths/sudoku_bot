@@ -68,50 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -124,6 +80,39 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -134,6 +123,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,139 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule
+move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-move_arm_joints_generate_messages: move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule
+rosgraph_msgs_generate_messages_py: move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
-.PHONY : move_arm_joints_generate_messages
+.PHONY : rosgraph_msgs_generate_messages_py
 
 # fast build rule for target.
-move_arm_joints_generate_messages/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/build
-.PHONY : move_arm_joints_generate_messages/fast
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule
+
+# Convenience name for target.
+move_arm_joints_genlisp: move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule
+
+.PHONY : move_arm_joints_genlisp
+
+# fast build rule for target.
+move_arm_joints_genlisp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/build
+.PHONY : move_arm_joints_genlisp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: move_arm_joints/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make move_arm_joints/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: move_arm_joints/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make move_arm_joints/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: move_arm_joints/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make move_arm_joints/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/_catkin_empty_exported_target.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: move_arm_joints/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_arm_joints/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 # Convenience name for target.
 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_eus.dir/rule:
@@ -198,34 +318,79 @@ move_arm_joints_generate_messages_eus/fast:
 .PHONY : move_arm_joints_generate_messages_eus/fast
 
 # Convenience name for target.
-move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule
+move_arm_joints/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
-_move_arm_joints_generate_messages_check_deps_move_and_confirm: move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule
+roscpp_generate_messages_py: move_arm_joints/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
-.PHONY : _move_arm_joints_generate_messages_check_deps_move_and_confirm
+.PHONY : roscpp_generate_messages_py
 
 # fast build rule for target.
-_move_arm_joints_generate_messages_check_deps_move_and_confirm/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/build.make move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/build
-.PHONY : _move_arm_joints_generate_messages_check_deps_move_and_confirm/fast
+roscpp_generate_messages_py/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/roscpp_generate_messages_py.dir/build.make move_arm_joints/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule
+move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-move_arm_joints_genpy: move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule
+rosgraph_msgs_generate_messages_nodejs: move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : move_arm_joints_genpy
+.PHONY : rosgraph_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-move_arm_joints_genpy/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/build
-.PHONY : move_arm_joints_genpy/fast
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make move_arm_joints/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: move_arm_joints/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/roscpp_generate_messages_eus.dir/build.make move_arm_joints/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/rule
+
+# Convenience name for target.
+arm_elbow_flex_joint_node: move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/rule
+
+.PHONY : arm_elbow_flex_joint_node
+
+# fast build rule for target.
+arm_elbow_flex_joint_node/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/build
+.PHONY : arm_elbow_flex_joint_node/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: move_arm_joints/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make move_arm_joints/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 move_arm_joints/CMakeFiles/move_arm_joints_gencpp.dir/rule:
@@ -243,79 +408,34 @@ move_arm_joints_gencpp/fast:
 .PHONY : move_arm_joints_gencpp/fast
 
 # Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule
+move_arm_joints/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-move_arm_joints_geneus: move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule
+std_msgs_generate_messages_lisp: move_arm_joints/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : move_arm_joints_geneus
+.PHONY : std_msgs_generate_messages_lisp
 
 # fast build rule for target.
-move_arm_joints_geneus/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/build
-.PHONY : move_arm_joints_geneus/fast
+std_msgs_generate_messages_lisp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make move_arm_joints/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule
+move_arm_joints/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-move_arm_joints_generate_messages_cpp: move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule
+std_msgs_generate_messages_nodejs: move_arm_joints/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : move_arm_joints_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-move_arm_joints_generate_messages_cpp/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/build
-.PHONY : move_arm_joints_generate_messages_cpp/fast
-
-# Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule
-
-# Convenience name for target.
-move_arm_joints_gennodejs: move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule
-
-.PHONY : move_arm_joints_gennodejs
-
-# fast build rule for target.
-move_arm_joints_gennodejs/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/build
-.PHONY : move_arm_joints_gennodejs/fast
-
-# Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-move_arm_joints_generate_messages_lisp: move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule
-
-.PHONY : move_arm_joints_generate_messages_lisp
-
-# fast build rule for target.
-move_arm_joints_generate_messages_lisp/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/build
-.PHONY : move_arm_joints_generate_messages_lisp/fast
-
-# Convenience name for target.
-move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule
-.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule
-
-# Convenience name for target.
-move_arm_joints_genlisp: move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/rule
-
-.PHONY : move_arm_joints_genlisp
-
-# fast build rule for target.
-move_arm_joints_genlisp/fast:
-	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_genlisp.dir/build
-.PHONY : move_arm_joints_genlisp/fast
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make move_arm_joints/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_nodejs.dir/rule:
@@ -347,6 +467,336 @@ move_arm_joints_generate_messages_py/fast:
 	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_py.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_py.dir/build
 .PHONY : move_arm_joints_generate_messages_py/fast
 
+# Convenience name for target.
+move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/rule
+
+# Convenience name for target.
+arm_wrist_flex_joint_node: move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/rule
+
+.PHONY : arm_wrist_flex_joint_node
+
+# fast build rule for target.
+arm_wrist_flex_joint_node/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/build
+.PHONY : arm_wrist_flex_joint_node/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: move_arm_joints/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/std_msgs_generate_messages_py.dir/build.make move_arm_joints/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/rule
+
+# Convenience name for target.
+arm_shoulder_lift_joint_node: move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/rule
+
+.PHONY : arm_shoulder_lift_joint_node
+
+# fast build rule for target.
+arm_shoulder_lift_joint_node/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/build
+.PHONY : arm_shoulder_lift_joint_node/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: move_arm_joints/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make move_arm_joints/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule
+
+# Convenience name for target.
+move_arm_joints_generate_messages: move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/rule
+
+.PHONY : move_arm_joints_generate_messages
+
+# fast build rule for target.
+move_arm_joints_generate_messages/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages.dir/build
+.PHONY : move_arm_joints_generate_messages/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+move_arm_joints_generate_messages_cpp: move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/rule
+
+.PHONY : move_arm_joints_generate_messages_cpp
+
+# fast build rule for target.
+move_arm_joints_generate_messages_cpp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp.dir/build
+.PHONY : move_arm_joints_generate_messages_cpp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule
+
+# Convenience name for target.
+_move_arm_joints_generate_messages_check_deps_move_and_confirm: move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/rule
+
+.PHONY : _move_arm_joints_generate_messages_check_deps_move_and_confirm
+
+# fast build rule for target.
+_move_arm_joints_generate_messages_check_deps_move_and_confirm/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/build.make move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm.dir/build
+.PHONY : _move_arm_joints_generate_messages_check_deps_move_and_confirm/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+move_arm_joints_generate_messages_lisp: move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/rule
+
+.PHONY : move_arm_joints_generate_messages_lisp
+
+# fast build rule for target.
+move_arm_joints_generate_messages_lisp/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_lisp.dir/build
+.PHONY : move_arm_joints_generate_messages_lisp/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/gripper_joint_node.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/gripper_joint_node.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/gripper_joint_node.dir/rule
+
+# Convenience name for target.
+gripper_joint_node: move_arm_joints/CMakeFiles/gripper_joint_node.dir/rule
+
+.PHONY : gripper_joint_node
+
+# fast build rule for target.
+gripper_joint_node/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/gripper_joint_node.dir/build.make move_arm_joints/CMakeFiles/gripper_joint_node.dir/build
+.PHONY : gripper_joint_node/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule
+
+# Convenience name for target.
+move_arm_joints_gennodejs: move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/rule
+
+.PHONY : move_arm_joints_gennodejs
+
+# fast build rule for target.
+move_arm_joints_gennodejs/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_gennodejs.dir/build
+.PHONY : move_arm_joints_gennodejs/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule
+
+# Convenience name for target.
+move_arm_joints_genpy: move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/rule
+
+.PHONY : move_arm_joints_genpy
+
+# fast build rule for target.
+move_arm_joints_genpy/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_genpy.dir/build
+.PHONY : move_arm_joints_genpy/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule
+
+# Convenience name for target.
+move_arm_joints_geneus: move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/rule
+
+.PHONY : move_arm_joints_geneus
+
+# fast build rule for target.
+move_arm_joints_geneus/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/build.make move_arm_joints/CMakeFiles/move_arm_joints_geneus.dir/build
+.PHONY : move_arm_joints_geneus/fast
+
+# Convenience name for target.
+move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/rule:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f CMakeFiles/Makefile2 move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/rule
+.PHONY : move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/rule
+
+# Convenience name for target.
+arm_shoulder_pan_joint_node: move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/rule
+
+.PHONY : arm_shoulder_pan_joint_node
+
+# fast build rule for target.
+arm_shoulder_pan_joint_node/fast:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/build
+.PHONY : arm_shoulder_pan_joint_node/fast
+
+src/arm_elbow_flex_joint_exec.o: src/arm_elbow_flex_joint_exec.cpp.o
+
+.PHONY : src/arm_elbow_flex_joint_exec.o
+
+# target to build an object file
+src/arm_elbow_flex_joint_exec.cpp.o:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/src/arm_elbow_flex_joint_exec.cpp.o
+.PHONY : src/arm_elbow_flex_joint_exec.cpp.o
+
+src/arm_elbow_flex_joint_exec.i: src/arm_elbow_flex_joint_exec.cpp.i
+
+.PHONY : src/arm_elbow_flex_joint_exec.i
+
+# target to preprocess a source file
+src/arm_elbow_flex_joint_exec.cpp.i:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/src/arm_elbow_flex_joint_exec.cpp.i
+.PHONY : src/arm_elbow_flex_joint_exec.cpp.i
+
+src/arm_elbow_flex_joint_exec.s: src/arm_elbow_flex_joint_exec.cpp.s
+
+.PHONY : src/arm_elbow_flex_joint_exec.s
+
+# target to generate assembly for a file
+src/arm_elbow_flex_joint_exec.cpp.s:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_elbow_flex_joint_node.dir/src/arm_elbow_flex_joint_exec.cpp.s
+.PHONY : src/arm_elbow_flex_joint_exec.cpp.s
+
+src/arm_shoulder_lift_joint_exec.o: src/arm_shoulder_lift_joint_exec.cpp.o
+
+.PHONY : src/arm_shoulder_lift_joint_exec.o
+
+# target to build an object file
+src/arm_shoulder_lift_joint_exec.cpp.o:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/src/arm_shoulder_lift_joint_exec.cpp.o
+.PHONY : src/arm_shoulder_lift_joint_exec.cpp.o
+
+src/arm_shoulder_lift_joint_exec.i: src/arm_shoulder_lift_joint_exec.cpp.i
+
+.PHONY : src/arm_shoulder_lift_joint_exec.i
+
+# target to preprocess a source file
+src/arm_shoulder_lift_joint_exec.cpp.i:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/src/arm_shoulder_lift_joint_exec.cpp.i
+.PHONY : src/arm_shoulder_lift_joint_exec.cpp.i
+
+src/arm_shoulder_lift_joint_exec.s: src/arm_shoulder_lift_joint_exec.cpp.s
+
+.PHONY : src/arm_shoulder_lift_joint_exec.s
+
+# target to generate assembly for a file
+src/arm_shoulder_lift_joint_exec.cpp.s:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_lift_joint_node.dir/src/arm_shoulder_lift_joint_exec.cpp.s
+.PHONY : src/arm_shoulder_lift_joint_exec.cpp.s
+
+src/arm_shoulder_pan_joint_exec.o: src/arm_shoulder_pan_joint_exec.cpp.o
+
+.PHONY : src/arm_shoulder_pan_joint_exec.o
+
+# target to build an object file
+src/arm_shoulder_pan_joint_exec.cpp.o:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/src/arm_shoulder_pan_joint_exec.cpp.o
+.PHONY : src/arm_shoulder_pan_joint_exec.cpp.o
+
+src/arm_shoulder_pan_joint_exec.i: src/arm_shoulder_pan_joint_exec.cpp.i
+
+.PHONY : src/arm_shoulder_pan_joint_exec.i
+
+# target to preprocess a source file
+src/arm_shoulder_pan_joint_exec.cpp.i:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/src/arm_shoulder_pan_joint_exec.cpp.i
+.PHONY : src/arm_shoulder_pan_joint_exec.cpp.i
+
+src/arm_shoulder_pan_joint_exec.s: src/arm_shoulder_pan_joint_exec.cpp.s
+
+.PHONY : src/arm_shoulder_pan_joint_exec.s
+
+# target to generate assembly for a file
+src/arm_shoulder_pan_joint_exec.cpp.s:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_shoulder_pan_joint_node.dir/src/arm_shoulder_pan_joint_exec.cpp.s
+.PHONY : src/arm_shoulder_pan_joint_exec.cpp.s
+
+src/arm_wrist_flex_joint_exec.o: src/arm_wrist_flex_joint_exec.cpp.o
+
+.PHONY : src/arm_wrist_flex_joint_exec.o
+
+# target to build an object file
+src/arm_wrist_flex_joint_exec.cpp.o:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/src/arm_wrist_flex_joint_exec.cpp.o
+.PHONY : src/arm_wrist_flex_joint_exec.cpp.o
+
+src/arm_wrist_flex_joint_exec.i: src/arm_wrist_flex_joint_exec.cpp.i
+
+.PHONY : src/arm_wrist_flex_joint_exec.i
+
+# target to preprocess a source file
+src/arm_wrist_flex_joint_exec.cpp.i:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/src/arm_wrist_flex_joint_exec.cpp.i
+.PHONY : src/arm_wrist_flex_joint_exec.cpp.i
+
+src/arm_wrist_flex_joint_exec.s: src/arm_wrist_flex_joint_exec.cpp.s
+
+.PHONY : src/arm_wrist_flex_joint_exec.s
+
+# target to generate assembly for a file
+src/arm_wrist_flex_joint_exec.cpp.s:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/build.make move_arm_joints/CMakeFiles/arm_wrist_flex_joint_node.dir/src/arm_wrist_flex_joint_exec.cpp.s
+.PHONY : src/arm_wrist_flex_joint_exec.cpp.s
+
+src/gripper_joint_exec.o: src/gripper_joint_exec.cpp.o
+
+.PHONY : src/gripper_joint_exec.o
+
+# target to build an object file
+src/gripper_joint_exec.cpp.o:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/gripper_joint_node.dir/build.make move_arm_joints/CMakeFiles/gripper_joint_node.dir/src/gripper_joint_exec.cpp.o
+.PHONY : src/gripper_joint_exec.cpp.o
+
+src/gripper_joint_exec.i: src/gripper_joint_exec.cpp.i
+
+.PHONY : src/gripper_joint_exec.i
+
+# target to preprocess a source file
+src/gripper_joint_exec.cpp.i:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/gripper_joint_node.dir/build.make move_arm_joints/CMakeFiles/gripper_joint_node.dir/src/gripper_joint_exec.cpp.i
+.PHONY : src/gripper_joint_exec.cpp.i
+
+src/gripper_joint_exec.s: src/gripper_joint_exec.cpp.s
+
+.PHONY : src/gripper_joint_exec.s
+
+# target to generate assembly for a file
+src/gripper_joint_exec.cpp.s:
+	cd /home/alex/sudoku_bot_ws/build && $(MAKE) -f move_arm_joints/CMakeFiles/gripper_joint_node.dir/build.make move_arm_joints/CMakeFiles/gripper_joint_node.dir/src/gripper_joint_exec.cpp.s
+.PHONY : src/gripper_joint_exec.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -354,24 +804,60 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... move_arm_joints_generate_messages"
 	@echo "... install"
-	@echo "... move_arm_joints_generate_messages_eus"
-	@echo "... _move_arm_joints_generate_messages_check_deps_move_and_confirm"
-	@echo "... move_arm_joints_genpy"
-	@echo "... test"
-	@echo "... move_arm_joints_gencpp"
-	@echo "... move_arm_joints_geneus"
-	@echo "... move_arm_joints_generate_messages_cpp"
-	@echo "... move_arm_joints_gennodejs"
-	@echo "... move_arm_joints_generate_messages_lisp"
+	@echo "... list_install_components"
+	@echo "... edit_cache"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... install/local"
+	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... move_arm_joints_genlisp"
+	@echo "... test"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... move_arm_joints_generate_messages_eus"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... rebuild_cache"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... arm_elbow_flex_joint_node"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... move_arm_joints_gencpp"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... move_arm_joints_generate_messages_nodejs"
 	@echo "... move_arm_joints_generate_messages_py"
+	@echo "... arm_wrist_flex_joint_node"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... arm_shoulder_lift_joint_node"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... move_arm_joints_generate_messages"
+	@echo "... move_arm_joints_generate_messages_cpp"
+	@echo "... _move_arm_joints_generate_messages_check_deps_move_and_confirm"
+	@echo "... move_arm_joints_generate_messages_lisp"
+	@echo "... gripper_joint_node"
+	@echo "... move_arm_joints_gennodejs"
+	@echo "... move_arm_joints_genpy"
+	@echo "... move_arm_joints_geneus"
+	@echo "... arm_shoulder_pan_joint_node"
+	@echo "... src/arm_elbow_flex_joint_exec.o"
+	@echo "... src/arm_elbow_flex_joint_exec.i"
+	@echo "... src/arm_elbow_flex_joint_exec.s"
+	@echo "... src/arm_shoulder_lift_joint_exec.o"
+	@echo "... src/arm_shoulder_lift_joint_exec.i"
+	@echo "... src/arm_shoulder_lift_joint_exec.s"
+	@echo "... src/arm_shoulder_pan_joint_exec.o"
+	@echo "... src/arm_shoulder_pan_joint_exec.i"
+	@echo "... src/arm_shoulder_pan_joint_exec.s"
+	@echo "... src/arm_wrist_flex_joint_exec.o"
+	@echo "... src/arm_wrist_flex_joint_exec.i"
+	@echo "... src/arm_wrist_flex_joint_exec.s"
+	@echo "... src/gripper_joint_exec.o"
+	@echo "... src/gripper_joint_exec.i"
+	@echo "... src/gripper_joint_exec.s"
 .PHONY : help
 
 

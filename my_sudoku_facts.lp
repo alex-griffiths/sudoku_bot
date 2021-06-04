@@ -1,8 +1,21 @@
-gridNum(1, 1, 2).
-gridNum(1, 3, 4).
-gridNum(2, 2, 3).
-gridNum(2, 4, 1).
-gridNum(3, 2, 2).
-gridNum(3, 4, 4).
-gridNum(4, 1, 1).
-gridNum(4, 3, 3).
+gridNum(1,1,8).
+gridNum(1,4,5).
+gridNum(1,5,7).
+gridNum(1,8,4).
+gridNum(1,9,6).
+gridNum(2,5,4).
+gridNum(3,4,8).
+gridNum(3,5,3).
+gridNum(4,1,7).
+gridNum(4,9,9).
+gridNum(5,1,9).
+gridNum(5,2,3).
+gridNum(5,3,1).
+gridNum(6,1,2).
+gridNum(6,3,4).
+gridNum(6,6,8).
+gridNum(7,7,9).
+gridNum(7,9,2).
+gridNum(8,1,5).
+gridNum(9,4,4).
+gridNum(9,5,5).

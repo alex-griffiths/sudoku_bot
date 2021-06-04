@@ -13,12 +13,14 @@ bd6756b20da28d59a950f76f999440f7 /home/alex/sudoku_bot_ws/devel/share/common-lis
 568baad9dd63827bfbfbb9a1b3d3172d /home/alex/sudoku_bot_ws/devel/share/gennodejs/ros/move_arm_joints/srv/move_and_confirm.js
 d443fe4c52096f11680475125b1fb2cc /home/alex/sudoku_bot_ws/devel/share/gennodejs/ros/mover_client/msg/grid_num.js
 d3b057a878d6c799635b1afefa2f4aa5 /home/alex/sudoku_bot_ws/devel/share/gennodejs/ros/mover_client/msg/grid_num_vector.js
+4aae28d60a21151da6eb0f79c324f332 /home/alex/sudoku_bot_ws/devel/share/roseus/ros/interface/manifest.l
 594b474c81482851473765971c91a4af /home/alex/sudoku_bot_ws/devel/share/roseus/ros/move_arm_joints/manifest.l
 b3a37b54d04406870e1c96fa6bf78175 /home/alex/sudoku_bot_ws/devel/share/roseus/ros/move_arm_joints/srv/move_and_confirm.l
 53b033d2738f0843b5ecc3fdcecc0fff /home/alex/sudoku_bot_ws/devel/share/roseus/ros/mover_client/manifest.l
 86d3f3213e9721a3607c46f9f794bb74 /home/alex/sudoku_bot_ws/devel/share/roseus/ros/mover_client/msg/grid_num.l
 6e620d0134135a39110dacd7dd8235b5 /home/alex/sudoku_bot_ws/devel/share/roseus/ros/mover_client/msg/grid_num_vector.l
 d72e2432f9e838658fa037bb2a54bb83 CMakeFiles/clean_test_results
+6ee135d24d9992037b78bef9d8bdc075 interface/CMakeFiles/interface_generate_messages_eus
 d8d576f22eaccefa31c452c3ae771fc9 move_arm_joints/CMakeFiles/_move_arm_joints_generate_messages_check_deps_move_and_confirm
 07033db62578dc22a109c2d3e7fa7ab6 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_cpp
 07033db62578dc22a109c2d3e7fa7ab6 move_arm_joints/CMakeFiles/move_arm_joints_generate_messages_eus
