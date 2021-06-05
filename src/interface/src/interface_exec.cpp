@@ -54,6 +54,7 @@ void ng_callback(const mover_client::grid_num_vector &msg) {
 		}
 	}
 
+	ROS_INFO_STREAM("PUBLISHING SOLUTION" << endl);
 	// Publish the solution vector to the topic for the mover_client
 	interface_pub.publish(sol_vec);
 }
@@ -112,7 +113,7 @@ int main(int argc, char **argv)
 	ros::Subscriber interface_sub = nh.subscribe("num_grids/vector", 1000, ng_callback);
 
 	// Make sure publisher is hooked up to the right topic
-	interface_pub = nh.advertise<mover_client::grid_num_vector>("num_grid_sol/vector", 1000);
+	interface_pub = nh.advertise<mover_client::grid_num_vector>("num_grids_sol/vector", 1000);
 
 	ros::spin();
 }
